@@ -1,0 +1,52 @@
+:root {
+  /* Colors */
+  --red_500: hsl(4, 85%, 63%);
+  --gold_400: hsl(35, 77%, 62%);
+  --navy_950: hsl(240, 100%, 5%);
+  --navy_600: hsl(236, 13%, 42%);
+  --grey_300: hsl(233, 8%, 79%);
+  --grey_200: hsl(0, 0%, 85%);
+  --white: hsl(0, 100%, 100%);
+  --black: hsl(0, 0%, 0%);
+
+/* Typography */
+--ff:"Inter", sans-serif;
+/* Preset 1 (56px / 56px = 1) */
+  --fs-1: 56px;
+  --lh-1: 1; 
+  --fw-1: 800; /* Extra Bold */
+
+  /* Preset 2 (40px / 40px = 1) */
+  --fs-2: 40px;
+  --lh-2: 1;
+  --fw-2: 800;
+
+  /* Preset 3 (32px / 32px = 1) */
+  --fs-3: 32px;
+  --lh-3: 1;
+  --fw-3: 700; /* Bold */
+
+  /* Preset 4 (20px / 24px -> 24/20 = 1.2) */
+  --fs-4: 20px;
+  --lh-4: 1.2;
+  --fw-4: 800;
+
+  /* Preset 5 (18px / 24px -> 24/18 = 1.33) */
+  --fs-5: 18px;
+  --lh-5: 1.33;
+  --fw-5: 800;
+
+  /* Preset 6 (15px / 22px -> 22/15 = 1.46) */
+  --fs-6: 15px;
+  --lh-6: 1.46;
+  --fw-6: 400; /* Regular */
+
+/*Spacing */
+  --spacing-100:8px;
+  --spacing-300:24px;
+  --spacing-400:32px;
+  --spacing-500:40px;
+  --spacing-800:64px;
+  --spacing-1100:88px;
+
+}
