@@ -97,8 +97,8 @@ ul li a {
 main{
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-row: 1fr 1fr;
+  grid-template-areas:"hero-post news-sidebar "
+                      "trending-articles trending-articles";
   gap: var(--spacing-400);
 }
 .hero-post{
@@ -107,11 +107,12 @@ main{
   gap: var(--spacing-300);
 }
 .hero-image img{
-  width:700px;
+  width:100%;
 }
 .hero-content{
     display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows: 1fr ;
   gap: var(--spacing-400);
 }
 .hero-content h1{
@@ -149,10 +150,75 @@ gap: var(--spacing-400);
   color: var(--white);
   padding: var(--spacing-300);
 }
+
 .sidebar-title{
   color: var(--gold_400);
    font-size: var(--fs-3);
   font-weight: var(--fw-3);
   line-height: var(--lh-3);
   font-weight: var(--fw-3);
+}
+.sidebar-item{display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--navy_600);
+  gap: var(--spacing-100);
+  
+}
+.item-title{
+   font-size: var(--fs-4);
+   font-weight: var(--fw-4);
+  line-height: var(--lh-4);
+  font-weight: var(--fw-4);
+}
+.item-desc{
+  font-size: var(--fs-6);
+   font-weight: var(--fw-6);
+  line-height: var(--lh-6);
+  font-weight: var(--fw-6);
+  color: var(--grey_300);
+  margin-bottom:var(--spacing-400) ;
+  
+}
+.trending-articles{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  grid-area: trending-articles;
+  gap: var(--spacing-500);
+ 
+}
+.trending-card{
+display: grid;
+grid-template-columns: auto auto;
+gap: var(--spacing-300);
+}
+.trending-card-body{
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-100);
+}
+
+.card-number{
+  font-size: var(--fs-3);
+   font-weight: var(--fw-3);
+  line-height: var(--lh-3);
+  font-weight: var(--fw-3);
+  color: var(--red_500);
+}
+.trending-image img{
+  width: 100px;
+  height: 150px;
+}
+.card-title{
+   font-size: var(--fs-5);
+   font-weight: var(--fw-5);
+  line-height: var(--lh-5);
+  font-weight: var(--fw-5);
+}
+.card-text{
+     font-size: var(--fs-6);
+   font-weight: var(--fw-6);
+  line-height: var(--lh-6);
+  font-weight: var(--fw-6);
+  color: var(--navy_600);
 }
