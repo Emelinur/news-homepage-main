@@ -29,16 +29,22 @@
 </head>
 
 <body>
-  <div class="container">
+
+  <div class="container ">
     <header>
       <figure class="logo">
         <img src="assets/images/logo.svg" alt="logo image">
       </figure>
+      <figure class="menuOpen">
+        <img src="assets/images/icon-menu.svg" alt="icon-menu">
+      </figure>
+      <div class="menu-overlay"></div>
+      
       <nav class="menu">
-        <button class="iconMenu"><img src="assets/images/icon-menu.svg" alt="icon-menu"></button>
-        <button class="menuClose"><img src="assets/images/icon-menu-close.svg" alt="icon-menu-close"></button>
-     
-        <ul>
+        <figure>
+          <img src="assets/images/icon-menu-close.svg" alt="icon-menu-close" class="menuClose">
+        </figure>
+        <ul class="menu-list">
           <li><a href="#">Home</a></li>
           <li><a href="#">New</a></li>
           <li><a href="#">Popular</a></li>
@@ -128,6 +134,7 @@
       Coded by <a href="#">Your Name Here</a>.
     </footer>
   </div>
+  <script src="main.js"></script>
 </body>
 
 </html>

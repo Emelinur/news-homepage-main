@@ -59,6 +59,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100svh;
 }
 .container {
   width: 1112px;
@@ -76,24 +77,17 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  position: relative;
 }
-.menu{
-width: 312px;
-height: 669px;
-position:absolute ;
-z-index: 999;
-background-color: bisque;
-top: 0px;
-right: 0px;
+
+.menuOpen {
+  display: none;
 }
-.iconMenu{
-  display: block;
+.menuClose {
+    display: none;
+    justify-content: flex-end;
+    margin: 40px;
 }
-.menuClose{
-  display: block;
-}
-.menu ul {
+.menu-list {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -108,6 +102,10 @@ ul li a {
   font-size: var(--fs-6);
   font-weight: var(--fw-6);
   line-height: var(--lh-6);
+}
+ul li a:hover {
+  cursor: pointer;
+  color: var(--red_500);
 }
 main {
   width: 100%;
@@ -236,90 +234,180 @@ main {
   color: var(--navy_600);
 }
 
-@media(max-width:1080px){
-.container{
-  width:768px;
-  margin: 28px 80px;
-  display: flex;
-  flex-direction: column;
-}
-main {
-  width: 100%;
-  display: grid;
-  grid-template-areas:
-    "hero-post" 
-    "news-sidebar "
-    "trending-articles";
-  gap: var(--spacing-400);
-}
-.menu ul {
-  display: block;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-800);
-}
-.hero-content {
-  display: grid;
-  grid-template-columns: auto;
-  gap: var(--spacing-400);
-}
-.hero-content h1 {
-  font-size: var(--fs-2);
-  font-weight: var(--fw-2);
-  line-height: var(--lh-2);
-}
-.trending-articles {
-  display: flex;
-  flex-direction: column;
-}
-.trending-card {
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: flex-start;
-  align-items: center;
-}
-.trending-image img {
-  width: 100px;
-  height: 127px;
-}
-@media(max-width:768px){
-  .container{
-  width: 375px;
-  display: flex;
-  flex-direction: column;
-}
-main {
-  width: 100%;
-  display: grid;
-  grid-template-areas:
-    "hero-post" 
-    "news-sidebar "
-    "trending-articles";
-  gap: var(--spacing-400);
-}
-.hero-content {
-  display: grid;
-  grid-template-columns: auto;
-  gap: var(--spacing-400);
-}
-.hero-content h1 {
-  font-size: var(--fs-2);
-  font-weight: var(--fw-2);
-  line-height: var(--lh-2);
-}
-.trending-articles {
-  display: flex;
-  flex-direction: column;
-}
-.trending-card {
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: flex-start;
-  align-items: center;
-}
-.trending-image img {
-  width: 100px;
-  height: 127px;
-}
-}
+@media (max-width: 1080px) {
+  body {
+    height: 100%;
+  }
+  .container {
+    width: 608px;
+    margin: 28px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-300);
+  }
+   .menuOpen {
+    display: flex;
+  }
+  .menu-overlay {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0px;
+    left: 0px;
+  }
+  .menu {
+    width: 312px;
+    height: 600px;
+    position: absolute;
+    z-index: 1;
+    background-color: var(--white);
+    top: 0px;
+    right: 0px;
+    display: none;
+  }
+
+  .menuClose {
+    display: none;
+    justify-content: flex-end;
+    margin: 40px;
+  }
+  .menu-list {
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: var(--spacing-300);
+    padding: var(--spacing-400);
+  }
+  ul li a {
+    text-decoration: none;
+    color: var(--navy_600);
+    font-size: var(--fs-5);
+    font-weight: var(--fw-6);
+    line-height: var(--lh-5);
+  }
+
+  main {
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+      "hero-post"
+      "news-sidebar "
+      "trending-articles";
+    gap: var(--spacing-400);
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: auto;
+    gap: var(--spacing-400);
+  }
+  .hero-content h1 {
+    font-size: var(--fs-2);
+    font-weight: var(--fw-2);
+    line-height: var(--lh-2);
+  }
+  .trending-articles {
+    display: flex;
+    flex-direction: column;
+  }
+  .trending-card {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .trending-image img {
+    width: 100px;
+    height: 127px;
+  }
+  @media (max-width: 767px) {
+    .container {
+      width: 325px;
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-300);
+    }
+      .menuOpen {
+      display: flex;
+    }
+      .menuClose {
+      display: none;
+      justify-content: flex-end;
+    }
+    .menu-overlay {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.5);
+      top: 0px;
+      left: 0px;
+     
+    }
+    .menu {
+      width: 256px;
+      height: 570px;
+      position: absolute;
+      z-index: 2;
+      background-color: var(--white);
+      top: 0px;
+      right: 0px;
+       display: none;
+    }
+  
+ 
+    .menu-list {
+      display: none;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: var(--spacing-300);
+    }
+    ul li a {
+      text-decoration: none;
+      color: var(--navy_600);
+      font-size: var(--fs-5);
+      font-weight: var(--fw-6);
+      line-height: var(--lh-5);
+    }
+ 
+    main {
+      width: 100%;
+      display: grid;
+      grid-template-areas:
+        "hero-post"
+        "news-sidebar "
+        "trending-articles";
+      gap: var(--spacing-400);
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: auto;
+      gap: var(--spacing-400);
+    }
+    .hero-content h1 {
+      font-size: var(--fs-2);
+      font-weight: var(--fw-2);
+      line-height: var(--lh-2);
+    }
+    .trending-articles {
+      display: flex;
+      flex-direction: column;
+    }
+    .trending-card {
+      display: grid;
+      grid-template-columns: auto auto;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .trending-image img {
+      width: 100px;
+      height: 127px;
+    }
+  }
 }
