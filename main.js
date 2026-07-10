@@ -1,14 +1,13 @@
-const menuOpen=document.querySelector(".menuOpen");
-const menuOverlay=document.querySelector(".menu-overlay")
-const menu=document.querySelector(".menu")
-const menuList=document.querySelector(".menu-list")
-const menuClose=document.querySelector(".menuClose")
-menuOpen.addEventListener("click",()=>{
-  menuOpen.style.display="none";
-  menuClose.style.display="flex";
-  menuOverlay.style.display="flex";
-menu.style.display="flex";
-menuList.style.display="flex";
+const openBtn = document.querySelector(".open-menu");
+const closeBtn = document.querySelector(".close-menu");
+const navMenu = document.querySelector(".nav-menu");
+const overlay = document.querySelector(".menu-overlay");
 
-  console.log("tıklandı")
-})
+function toggleMenu() {
+  navMenu.classList.toggle("is-active");
+  overlay.classList.toggle("is-active");
+}
+
+openBtn.addEventListener("click", toggleMenu);
+closeBtn.addEventListener("click", toggleMenu);
+overlay.addEventListener("click", toggleMenu);
